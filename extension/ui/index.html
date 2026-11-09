@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vignet — Asset Library</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Vignet</h1>
+      <p>Локальная библиотека эффектов и программ для ChatGPT</p>
+      <button id="refresh">Обновить</button>
+    </header>
+    <main>
+      <p id="notice" role="status" aria-live="polite"></p>
+      <section>
+        <h2>Импорт пакета</h2>
+        <div id="drop" tabindex="0">
+          Перетащите .vignet сюда или
+          <label
+            >выберите файл <input id="file" type="file" accept=".vignet"
+          /></label>
+        </div>
+        <div id="review" hidden></div>
+      </section>
+      <section>
+        <h2>Установленные Asset</h2>
+        <label
+          >Контекст запуска
+          <select id="target"></select
+        ></label>
+        <label
+          >Область
+          <select id="scope">
+            <option value="current_chat">Текущий чат</option>
+            <option value="global">Глобальная</option>
+            <option value="temporary">Временная</option>
+          </select></label
+        >
+        <div id="assets" class="cards"></div>
+      </section>
+      <section>
+        <h2>Экземпляры</h2>
+        <div id="instances"></div>
+      </section>
+      <section>
+        <h2>Общая Media Library</h2>
+        <p id="media-summary"></p>
+        <button id="gc">Удалить неиспользуемые ресурсы</button>
+        <div id="media"></div>
+      </section>
+      <section>
+        <h2>Подключение и диагностика</h2>
+        <form id="connection">
+          <label
+            >WebSocket endpoint
+            <input
+              id="endpoint"
+              type="url"
+              placeholder="ws://127.0.0.1:8788/extension"
+              required /></label
+          ><label
+            >Токен устройства
+            <input
+              id="token"
+              type="password"
+              autocomplete="off"
+              placeholder="Оставьте пустым, чтобы сохранить текущий" /></label
+          ><button>Сохранить подключение</button>
+        </form>
+        <p>
+          Для JS-пакетов откройте chrome://extensions → Vignet → Allow User
+          Scripts. В старых Chromium может требоваться режим разработчика.
+          Пакеты с доступом к DOM могут читать текст беседы.
+        </p>
+        <pre id="diagnostics"></pre>
+      </section>
+    </main>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

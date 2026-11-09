@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Vignet",
+  "version": "0.2.0",
+  "description": "Local MCP-controlled vignette overlay for chatgpt.com",
+  "minimum_chrome_version": "135",
+  "permissions": ["storage", "tabs", "alarms", "webNavigation", "userScripts"],
+  "host_permissions": ["https://chatgpt.com/*", "http://127.0.0.1:8788/*"],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": { "default_title": "Vignet — Assets" },
+  "options_ui": { "page": "ui/index.html", "open_in_tab": true },
+  "content_scripts": [
+    {
+      "matches": ["https://chatgpt.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

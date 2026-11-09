@@ -1,0 +1,149 @@
+:root {
+  color-scheme: light dark;
+  font:
+    15px/1.5 system-ui,
+    sans-serif;
+  --border: #8885;
+  --accent: #198470;
+}
+body {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px;
+  background: light-dark(#f5f7f8, #131819);
+  color: light-dark(#162423, #e6efed);
+}
+header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+header h1 {
+  margin: 0;
+}
+header p {
+  flex: 1;
+}
+section {
+  background: light-dark(white, #1c2425);
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  margin: 18px 0;
+}
+h2 {
+  font-size: 1.2rem;
+  margin: 0 0 16px;
+}
+h3 {
+  margin: 0 0 8px;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 7px 10px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+button {
+  cursor: pointer;
+  background: light-dark(#e2f0ec, #28473f);
+}
+button:hover {
+  border-color: var(--accent);
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+label {
+  display: block;
+  margin: 10px 0;
+}
+input:not([type="checkbox"]),
+select,
+textarea {
+  display: block;
+  width: 100%;
+}
+input[type="checkbox"] {
+  margin-right: 8px;
+}
+textarea {
+  min-height: 90px;
+}
+#notice {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+#notice.error {
+  color: light-dark(#a52525, #ffa7a7);
+}
+#drop {
+  border: 2px dashed var(--border);
+  padding: 18px;
+  border-radius: 8px;
+}
+#drop.over {
+  border-color: var(--accent);
+}
+#review {
+  margin-top: 18px;
+  padding: 18px;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+.card {
+  border: 1px solid var(--border);
+  padding: 16px;
+  border-radius: 10px;
+  overflow-wrap: anywhere;
+}
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+.metadata {
+  font-size: 0.88rem;
+  opacity: 0.8;
+}
+pre {
+  font-size: 0.85rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 8px;
+}
+.instance {
+  border-bottom: 1px solid var(--border);
+  padding: 12px 0;
+}
+.media-row {
+  font-size: 0.85rem;
+  border-bottom: 1px solid var(--border);
+  padding: 8px 0;
+  overflow-wrap: anywhere;
+}
+summary {
+  cursor: pointer;
+}
+small {
+  display: block;
+  opacity: 0.8;
+}
