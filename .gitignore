@@ -6,4 +6,4 @@ dist/
 *.token
 tunnel*
 packages/*
-!packages/.togitkeep
+!packages/.gitkeep
